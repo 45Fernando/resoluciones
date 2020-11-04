@@ -1,0 +1,30 @@
+
+<table class="table mt-4 table-bordered table-hover ">
+  <thead class="thead-dark">
+    <tr>
+      <th>Numero</th>
+      <th>Año</th>
+      <th>Tema</th>
+      <th>Descripcion</th>
+      <th>Archivo</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for resolution <- @resolutions do %>
+    <tr>
+      <td><%= resolution.number %></td>
+      <td><%= resolution.year %></td>
+      <td><%= resolution.subject %></td>
+      <td><%= resolution.description %></td>
+      <td><%= resolution.file %></td>
+
+      <td>
+        <span><%= link "Ver", to: Routes.resolution_path(@conn, :show, resolution), class: "btn btn-primary btn-sm" %></span>
+        <span><%= link "Editar", to: Routes.resolution_path(@conn, :edit, resolution) , class: "btn btn-primary btn-sm"%></span>
+        <span><%= link "Borrar", to: Routes.resolution_path(@conn, :delete, resolution), class: "btn btn-danger btn-sm", method: :delete, data: [confirm: "Are you sure?"] %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>

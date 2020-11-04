@@ -1,0 +1,33 @@
+<h1>Show Resolution</h1>
+
+<ul>
+
+  <li>
+    <strong>Number:</strong>
+    <%= @resolution.number %>
+  </li>
+
+  <li>
+    <strong>Year:</strong>
+    <%= @resolution.year %>
+  </li>
+
+  <li>
+    <strong>Subject:</strong>
+    <%= @resolution.subject %>
+  </li>
+
+  <li>
+    <strong>Description:</strong>
+    <%= @resolution.description %>
+  </li>
+
+  <li>
+    <strong>File:</strong>
+    <%= @resolution.file %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.resolution_path(@conn, :edit, @resolution) %></span>
+<span><%= link "Back", to: Routes.resolution_path(@conn, :index) %></span>
